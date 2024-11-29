@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://mill3.studio
- * @since      1.0.0
+ * @since      0.0.1
  *
  * @package    Ecoles_Creatives_Banner
  * @subpackage Ecoles_Creatives_Banner/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
+ * @since      0.0.1
  * @package    Ecoles_Creatives_Banner
  * @subpackage Ecoles_Creatives_Banner/includes
  * @author     MILL3 Studio <antoine@mill3.studio>
@@ -33,7 +33,7 @@ class Ecoles_Creatives_Banner {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 * @access   protected
 	 * @var      Ecoles_Creatives_Banner_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Ecoles_Creatives_Banner {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Ecoles_Creatives_Banner {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -60,7 +60,7 @@ class Ecoles_Creatives_Banner {
 	/**
 	 * The plugin updater
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 * @access   protected
 	 * @var      Ecole_Creative_Banner_Updater    $updater    The plugin updater.
 	 */
@@ -73,7 +73,7 @@ class Ecoles_Creatives_Banner {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 */
 	public function __construct() {
 		if ( defined( 'ECOLES_CREATIVES_BANNER_VERSION' ) ) {
@@ -230,21 +230,26 @@ class Ecoles_Creatives_Banner {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.0
+	 * @since     0.0.1
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
 		return $this->version;
 	}
 
-	// Display the banner
+	/**
+	 * Display the banner
+	 *
+	 * @since     0.0.2.3
+	 * @return    string
+	 */
 	public static function display($theme = 'dark', $slogan = true) {
 		$logo = "images/ecoles-creatives-logo-{$theme}.png"
 
 		?>
 
 			<div class="ecoles-creatives-banner --theme-<?php echo $theme ?>">
-				<a href="https://www.ecolescreatives.com/" target="_blank" class="ecoles-creatives-banner__logo">
+				<a href="https://www.ecolescreatives.ca/" target="_blank" class="ecoles-creatives-banner__logo">
 					<img src="<?php echo Ecoles_Creatives_Banner_Public::public_path() . $logo ?>" alt="Les Écoles Créatives" />
 				</a>
 				<?php if ( $slogan == true ): ?>
