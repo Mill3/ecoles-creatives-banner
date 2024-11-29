@@ -58,6 +58,15 @@ class Ecoles_Creatives_Banner {
 	protected $version;
 
 	/**
+	 * The plugin updater
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Ecole_Creative_Banner_Updater    $updater    The plugin updater.
+	 */
+	protected $updater;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -100,6 +109,11 @@ class Ecoles_Creatives_Banner {
 	private function load_dependencies() {
 
 		/**
+		 * Updater class
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ecoles-creatives-banner-updater.php';
+
+		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
@@ -122,8 +136,9 @@ class Ecoles_Creatives_Banner {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ecoles-creatives-banner-public.php';
 
+		// create an instances of classes
 		$this->loader = new Ecoles_Creatives_Banner_Loader();
-
+		$this->updater = new Ecole_Creative_Banner_Updater();
 	}
 
 	/**
@@ -154,6 +169,10 @@ class Ecoles_Creatives_Banner {
 
 		$plugin_admin = new Ecoles_Creatives_Banner_Admin( $this->get_plugin_name(), $this->get_version() );
 
+		// Updater
+    $this->loader->add_filter('pre_set_site_transient_update_plugins', $this->updater, 'check_for_update');
+
+		// Admin styles and scripts
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 

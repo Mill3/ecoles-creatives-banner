@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 /**
  * The plugin bootstrap file
  *
@@ -9,14 +11,14 @@
  * that starts the plugin.
  *
  * @link              https://mill3.studio
- * @since             1.0.0
+ * @since             0.0.0.1
  * @package           Ecoles_Creatives_Banner
  *
  * @wordpress-plugin
  * Plugin Name:       Les Écoles Créatives - bannière
  * Plugin URI:        https://mill3.studio
- * Description:       This is a description of the plugin.
- * Version:           1.0.0
+ * Description:       Insère le logo Écoles Créatives en haut de chaque page du site.
+ * Version:           0.0.0.1
  * Author:            MILL3 Studio
  * Author URI:        https://mill3.studio/
  * License:           GPL-2.0+
@@ -32,10 +34,44 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Start at version 0.0.0.1 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'ECOLES_CREATIVES_BANNER_VERSION', '1.0.0' );
+define( 'ECOLES_CREATIVES_BANNER_VERSION', '0.0.0.1' );
+
+
+/**
+ * Plugins update server endpoint
+ */
+
+ define( 'ECOLE_CREATIVE_BANNER_PLUGINS_API', 'https://github.com/Mill3/ecoles-creatives-banner');
+
+ /**
+	* The plugin slug, should represent the plugin directory name.
+	*/
+ define( 'ECOLE_CREATIVE_BANNER_PLUGIN_SLUG', 'ecoles-creatives-banner' );
+
+ /**
+	* The name of the plugin directory (expected value).
+	*/
+ define( 'ECOLE_CREATIVE_BANNER_PLUGIN_DIR_NAME', ECOLE_CREATIVE_BANNER_PLUGIN_SLUG );
+
+
+/**
+ * The path of this installed plugin.
+ */
+define( 'ECOLE_CREATIVE_BANNER_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
+
+/**
+ * The name of the plugin file, ie : mill3-wp-utils.php
+ */
+define( 'ECOLE_CREATIVE_BANNER_PLUGIN_FILE_NAME', basename(__FILE__) );
+
+/**
+ * The name of the plugin file using expected directory structure, should be : mill3-wp-utils-plugin/mill3-wp-utils.php
+ */
+// define( 'ECOLE_CREATIVE_BANNER_PLUGIN_FILE', join("/", [ECOLE_CREATIVE_BANNER_PLUGIN_DIR_NAME, ECOLE_CREATIVE_BANNER_PLUGIN_FILE_NAME]));
+define( 'ECOLE_CREATIVE_BANNER_PLUGIN_FILE', join("/", [__DIR__, ECOLE_CREATIVE_BANNER_PLUGIN_FILE_NAME]));
 
 /**
  * The code that runs during plugin activation.
