@@ -1,0 +1,56 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+
+.ecoles-creatives-banner {
+  --border-color: rbga(0, 0, 0, 0.7);
+  --color: #000;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--color);
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  @media (min-width: 1024px) {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+}
+
+.ecoles-creatives-banner.--theme-dark {
+  --border-color: #373737;
+  --color: #fff;
+}
+
+.ecoles-creatives-banner__logo {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.ecoles-creatives-banner__logo img {
+  max-width: 100%;
+  height: auto;
+  width: 120px;
+  @media (min-width: 1024px) {
+    width: 236px;
+  }
+}
+
+.ecoles-creatives-banner__slogan {
+  grid-column: 3;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 400;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+}
