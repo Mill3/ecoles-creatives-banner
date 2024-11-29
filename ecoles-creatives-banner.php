@@ -11,14 +11,14 @@ require __DIR__ . '/vendor/autoload.php';
  * that starts the plugin.
  *
  * @link              https://mill3.studio
- * @since             0.0.0.1
+ * @since             0.0.2
  * @package           Ecoles_Creatives_Banner
  *
  * @wordpress-plugin
  * Plugin Name:       Les Écoles Créatives - bannière
  * Plugin URI:        https://mill3.studio
  * Description:       Insère le logo Écoles Créatives en haut de chaque page du site.
- * Version:           0.0.0.1
+ * Version:           0.0.2
  * Author:            MILL3 Studio
  * Author URI:        https://mill3.studio/
  * License:           GPL-2.0+
@@ -34,10 +34,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 0.0.0.1 and use SemVer - https://semver.org
+ * Start at version 0.0.1 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'ECOLES_CREATIVES_BANNER_VERSION', '0.0.0.1' );
+define( 'ECOLES_CREATIVES_BANNER_VERSION', '0.0.2' );
 
 
 /**
