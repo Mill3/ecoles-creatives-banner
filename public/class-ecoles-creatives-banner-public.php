@@ -97,7 +97,11 @@ class Ecoles_Creatives_Banner_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ecoles-creatives-banner-public.js', array( 'jquery' ), $this->version, false );
+	}
 
+	public function add_body_class($classes) {
+		$classes[] = 'ecoles-creatives-banner-enabled';
+		return $classes;
 	}
 
 	public static function public_path() {

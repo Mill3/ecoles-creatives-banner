@@ -64,7 +64,7 @@ class Ecoles_Creatives_Banner {
 	 * @access   protected
 	 * @var      Ecole_Creative_Banner_Updater    $updater    The plugin updater.
 	 */
-	protected $updater;
+	protected $updater= null;
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -191,6 +191,9 @@ class Ecoles_Creatives_Banner {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		// Add body class
+		$this->loader->add_filter('body_class', $plugin_public, 'add_body_class');
 
 	}
 
