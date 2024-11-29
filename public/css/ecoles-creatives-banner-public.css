@@ -4,7 +4,7 @@
  */
 
 
-.ecoles-creatives-banner {
+ .ecoles-creatives-banner {
   --border-color: rbga(0, 0, 0, 0.7);
   --color: #000;
   --background-color: fff;
@@ -19,8 +19,8 @@
   padding-bottom: 7px;
   position: relative;
   @media (min-width: 1024px) {
-    padding-bottom: 14px;
-    margin-bottom: 14px;
+    padding-top: 14px;
+    padding-bottom: 21px;
   }
 }
 
