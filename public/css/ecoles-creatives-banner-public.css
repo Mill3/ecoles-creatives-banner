@@ -5,7 +5,7 @@
 
 
  .ecoles-creatives-banner {
-  --border-color: rbga(0, 0, 0, 0.7);
+  --border-color: rgba(202, 202, 202, 1);
   --color: #000;
   --background-color: fff;
   display: grid;
